@@ -1,0 +1,25 @@
+{% extends 'home.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>productdetails</title>
+</head>
+<body>
+<h1>Detail View</h1>
+<div class="container">
+    <img src="{{object.img_url}}" alt="...">
+    <h1><strong>{{object.title}}</strong></h1>
+    <h3>Rs/- {{object.price}}</h3>
+    {% if object.p_avl is True %}
+        <a href="{% url 'cat_list' %}" class="btn btn-success">Buy Now</a>
+        <a  href="#" class="btn btn-warning">Add To Cart</a>
+    {% else %}
+        <h4 class="text-danger">Out Of Stock</h4>
+
+    {% endif %}
+</div>
+</body>
+</html>
+{% endblock content%}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cart</title>
+</head>
+<body>
+<h4>Cart items</h4>
+<div class="container-fluid">
+    {% if cart_items %}
+    <ul class="list_group">
+        {% for cart_items in cart_items %}
+        <img src="{{object.img_url}}" alt="...">
+
+
+    </ul>
+    <h1><strong>{{object.title}}</strong></h1>
+    <h3>Rs/- {{object.price}}</h3>
+
+</div>
+</body>
+</html>

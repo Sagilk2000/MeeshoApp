@@ -1,0 +1,8 @@
+.sform{
+    margin : auto;
+    width: 50%;
+    border: 3px solid green;
+    padding-top: 30px;
+    padding-left: 30px;
+    height : 500px;
+}

@@ -1,0 +1,33 @@
+{% extends 'home.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meesho</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+<h1>Product List</h1>
+<div class="row">
+    {% for each in object_list %}
+    <div class="col-lg-3 col-md-4 col-6  ">
+        <div class="card" style="width:13rem">
+        <img alt="..."   class="card-img-top" src="{{ each.img_url}}">
+        <h3>{{each.title}}</h3>
+        <p>{{each.price}}</p>
+        {% if each.p_avl is True %}
+            <p>Available</p>
+            {% else %}
+            <p>out of stock</p>
+            {% endif %}
+        <a href="{%url 'details' each.id %}" class="btn btn-success">View more...</a>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+</body>
+</html>
+{% endblock content%}
